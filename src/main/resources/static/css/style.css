@@ -1,81 +1,687 @@
-/*
- * Name: Sandun Withana Arachchi
- * Student ID: 1591903
- * BIT235 Assessment 2 - Part A
- *
- * This controller handles requests related to the administrator login.
- */
+
+* {
+    box-sizing: border-box;
+}
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
     margin: 0;
+
+    font-family:
+            "Segoe UI",
+            Arial,
+            sans-serif;
+
+    background:
+            linear-gradient(
+                    135deg,
+                    #eef4fb 0%,
+                    #f7f9fc 50%,
+                    #e9f1fa 100%
+            );
+
+    color: #172033;
+}
+
+
+/* ================================
+   Login Page
+   ================================ */
+
+.login-page {
     min-height: 100vh;
 
     display: flex;
-    justify-content: center;
+
     align-items: center;
+    justify-content: center;
+
+    padding: 30px;
 }
 
-.login-container,
-.message-container {
-    background-color: white;
-    width: 400px;
-    padding: 35px;
-    border-radius: 10px;
 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+/* ================================
+   Login Card
+   ================================ */
+
+.login-card {
+    width: 100%;
+
+    max-width: 430px;
+
+    background-color: #ffffff;
+
+    padding: 45px;
+
+    border-radius: 18px;
+
+    box-shadow:
+            0 20px 50px rgba(24, 39, 75, 0.12);
+}
+
+
+/* ================================
+   Login Icon
+   ================================ */
+
+.login-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background-color: #eaf4ff;
+
+    font-size: 26px;
+
+    margin-bottom: 22px;
+}
+
+
+/* ================================
+   Heading
+   ================================ */
+
+.login-card h1 {
+    margin: 0;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    color: #172033;
+}
+
+
+.login-subtitle {
+    margin-top: 10px;
+
+    margin-bottom: 30px;
+
+    color: #697386;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* ================================
+   Form
+   ================================ */
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #263248;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* ================================
+   Input
+   ================================ */
+
+.input-container {
+    position: relative;
+}
+
+
+.input-icon {
+    position: absolute;
+
+    left: 15px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-size: 15px;
+
+    opacity: 0.6;
+}
+
+
+.input-container input {
+    width: 100%;
+
+    height: 50px;
+
+    padding:
+            0
+            15px
+            0
+            45px;
+
+    border: 1px solid #d8dee9;
+
+    border-radius: 9px;
+
+    outline: none;
+
+    background-color: #ffffff;
+
+    color: #172033;
+
+    font-size: 14px;
+
+    transition:
+            border-color 0.2s,
+            box-shadow 0.2s;
+}
+
+
+.input-container input::placeholder {
+    color: #9aa4b2;
+}
+
+
+.input-container input:focus {
+    border-color: #2383d9;
+
+    box-shadow:
+            0 0 0 3px rgba(35, 131, 217, 0.12);
+}
+
+
+/* ================================
+   Login Button
+   ================================ */
+
+.login-button {
+    width: 100%;
+
+    height: 52px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background-color: #1769aa;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    transition:
+            background-color 0.2s,
+            transform 0.2s;
+}
+
+
+.login-button:hover {
+    background-color: #12588f;
+
+    transform: translateY(-1px);
+}
+
+
+.login-button:active {
+    transform: translateY(0);
+}
+
+
+.arrow {
+    font-size: 20px;
+}
+
+
+/* ================================
+   Security Message
+   ================================ */
+
+.security-message {
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #edf0f5;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    color: #8993a4;
+
+    font-size: 12px;
+}
+
+
+/* ================================
+   Responsive
+   ================================ */
+
+@media (max-width: 500px) {
+
+    .login-page {
+        padding: 20px;
+    }
+
+    .login-card {
+        padding: 32px 25px;
+    }
+
+    .login-card h1 {
+        font-size: 26px;
+    }
+}
+
+
+/* ================================
+   Simple Content Pages
+   ================================ */
+
+.simple-page {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+}
+
+
+/* ================================
+   Content Card
+   ================================ */
+
+.content-card {
+    width: 100%;
+
+    max-width: 520px;
+
+    background-color: #ffffff;
+
+    padding: 45px;
+
+    border-radius: 18px;
 
     text-align: center;
+
+    box-shadow:
+            0 20px 50px rgba(24, 39, 75, 0.12);
 }
 
-h1 {
+
+/* ================================
+   Success Icon
+   ================================ */
+
+.success-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 22px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: #e9f8ef;
+
+    color: #239653;
+
+    font-size: 30px;
+
+    font-weight: 700;
+}
+
+
+/* ================================
+   Error Icon
+   ================================ */
+
+.error-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 22px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: #fff1f1;
+
+    color: #d64545;
+
+    font-size: 30px;
+
+    font-weight: 700;
+}
+
+
+/* ================================
+   Page Label
+   ================================ */
+
+.page-label {
+    margin: 0 0 12px;
+
+    color: #1769aa;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.error-label {
+    color: #d64545;
+}
+
+
+/* ================================
+   Page Heading
+   ================================ */
+
+.content-card h1 {
+    margin: 0;
+
+    color: #172033;
+
+    font-size: 30px;
+
+    font-weight: 700;
+}
+
+
+/* ================================
+   Page Description
+   ================================ */
+
+.page-description {
+    margin: 12px auto 28px;
+
+    max-width: 420px;
+
+    color: #697386;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* ================================
+   Success Status Box
+   ================================ */
+
+.status-box {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+
+    text-align: left;
+
+    padding: 18px;
+
+    margin-bottom: 25px;
+
+    border-radius: 10px;
+
+    background-color: #f1faf5;
+
+    border: 1px solid #d7f0e0;
+}
+
+
+.status-icon {
+    width: 30px;
+    height: 30px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: #239653;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+
+/* ================================
+   Error Status Box
+   ================================ */
+
+.error-box {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+
+    text-align: left;
+
+    padding: 18px;
+
+    margin-bottom: 25px;
+
+    border-radius: 10px;
+
+    background-color: #fff6f6;
+
+    border: 1px solid #f3dddd;
+}
+
+
+.error-status-icon {
+    width: 30px;
+    height: 30px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: #d64545;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+
+/* ================================
+   Status Text
+   ================================ */
+
+.status-box strong,
+.error-box strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #263248;
+
+    font-size: 14px;
+}
+
+
+.status-box p,
+.error-box p {
+    margin: 0;
+
+    color: #697386;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* ================================
+   Information Section
+   ================================ */
+
+.info-section {
+    padding-top: 5px;
+
     margin-bottom: 25px;
 }
 
-p {
-    color: #555;
+
+.info-section h2 {
+    margin: 0 0 7px;
+
+    color: #263248;
+
+    font-size: 17px;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
+
+.info-section p {
+    margin: 0;
+
+    color: #697386;
+
+    font-size: 13px;
+
+    line-height: 1.6;
 }
 
-label {
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
 
-input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 15px;
-}
+/* ================================
+   Secondary Button
+   ================================ */
 
-button {
-    margin-top: 25px;
-    padding: 12px;
+.secondary-button,
+.login-again-button {
+    display: inline-flex;
 
-    border: none;
-    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
 
-    background-color: #333;
-    color: white;
+    gap: 9px;
 
-    font-size: 16px;
-    cursor: pointer;
-}
+    min-width: 180px;
 
-button:hover {
-    background-color: #555;
-}
+    height: 48px;
 
-a {
-    display: inline-block;
-    margin-top: 20px;
+    padding: 0 22px;
+
+    border-radius: 9px;
+
     text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition:
+            background-color 0.2s,
+            transform 0.2s;
+}
+
+
+/* Welcome button */
+
+.secondary-button {
+    background-color: #1769aa;
+
+    color: #ffffff;
+}
+
+
+.secondary-button:hover {
+    background-color: #12588f;
+
+    transform: translateY(-1px);
+}
+
+
+/* Error button */
+
+.login-again-button {
+    background-color: #1769aa;
+
+    color: #ffffff;
+}
+
+
+.login-again-button:hover {
+    background-color: #12588f;
+
+    transform: translateY(-1px);
+}
+
+
+.login-again-button span {
+    font-size: 19px;
+}
+
+
+/* ================================
+   Responsive Content Pages
+   ================================ */
+
+@media (max-width: 500px) {
+
+    .simple-page {
+        padding: 20px;
+    }
+
+    .content-card {
+        padding: 32px 25px;
+    }
+
+    .content-card h1 {
+        font-size: 26px;
+    }
+
 }

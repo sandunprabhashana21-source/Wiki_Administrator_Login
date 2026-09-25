@@ -1,55 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--
-/*
- * Name: Sandun Withana Arachchi
- * Student ID: 1591903
- * BIT235 Assessment 2 - Part A
- *
- * This controller handles requests related to the administrator login.
- */
-    -->
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Wiki Administrator Login</title>
+    <title>Wiki Admin | Login</title>
 
     <link rel="stylesheet" href="/css/style.css">
+
 </head>
 
 <body>
 
-<div class="login-container">
+<div class="login-page">
 
-    <h1>Wiki Administrator Login</h1>
+    <div class="login-card">
 
-    <p>Please enter your username and password.</p>
+        <!-- Login Icon -->
+        <div class="login-icon">
+            🔐
+        </div>
 
-    <form action="/login" method="post">
+        <!-- Heading -->
+        <h1>Welcome Back</h1>
 
-        <label for="username">Username</label>
+        <p class="login-subtitle">
+            Sign in to access the Wiki Administrator Portal.
+        </p>
 
-        <input
-                type="text"
-                id="username"
-                name="username"
-                required
-        >
 
-        <label for="password">Password</label>
+        <!-- Login Form -->
+        <form action="/login" method="post">
 
-        <input
-                type="password"
-                id="password"
-                name="password"
-                required
-        >
+            <!-- Username -->
+            <div class="form-group">
 
-        <button type="submit">Login</button>
+                <label for="username">
+                    Username
+                </label>
 
-    </form>
+                <div class="input-container">
+
+                    <span class="input-icon">👤</span>
+
+                    <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            placeholder="Enter your username"
+                            autocomplete="username"
+                            required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- Password -->
+            <div class="form-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <div class="input-container">
+
+                    <span class="input-icon">🔒</span>
+
+                    <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- Login Button -->
+            <button type="submit" class="login-button">
+
+                <span>Sign In</span>
+
+                <span class="arrow">→</span>
+
+            </button>
+
+        </form>
+
+
+        <!-- Security Information -->
+        <div class="security-message">
+
+            <span>🔒</span>
+
+            <span>
+                Authorized administrator access only
+            </span>
+
+        </div>
+
+    </div>
 
 </div>
 
